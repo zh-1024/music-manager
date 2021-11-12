@@ -215,7 +215,7 @@ export default {
           console.log(err);
         });
     },
-    //添加歌曲
+    //添加歌
     
     addSong() {
       let _this=this;
