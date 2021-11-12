@@ -29,7 +29,7 @@
     overflow-y: scroll;
     -webkit-transition: left .3s ease-in-out;
     transition: left .3s ease-in-out;
-    background: #D2D8DC;
+    background: #ffff;
   }
   
   .content {
@@ -43,7 +43,7 @@
   
   .container {
     padding: 20px;
-    background: #fff;
+    background: #ffff;
     border: 1px solid #ddd;
     border-radius: 5px;
   }
@@ -67,7 +67,7 @@
   }
   
   .el-table tr:hover {
-    background: #f6faff;
+    background: #ffff;
   }
   
   .mgb20 {

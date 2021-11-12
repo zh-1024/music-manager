@@ -54,6 +54,23 @@ export const mixin = {
                     type:'error'
                 })
             }
+        },
+        //弹出删除窗口
+        handleDelete(id){
+            this.idx=id;
+            this.deleteVisible=true;
+        },
+        //把已经选择的项赋值给multipleSelection
+        handleSelectChange(val){
+            this.multipleSelection=val;
+        },
+        //批量删除已经选择的项
+        delAll(){
+            for(let item of this.multipleSelection){
+                this.idx=item.id;
+                this.deleteRow();
+            }
+            this.multipleSelection=[];
         }
     }
 }
