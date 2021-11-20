@@ -42,7 +42,7 @@ export const mixin = {
             console.log(res);
             let _this=this;
             if(res.code==1){
-                _this.getSingers();
+                _this.getData();
                 _this.$notify({
                     title: '上传成功',
                     type:'success'

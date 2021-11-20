@@ -2,9 +2,7 @@
   <div class="table">
     <div class="container">
       <div class="habdle-box">
-        <el-button type="primary" size="mini" @click="delAll"
-          >批量删除</el-button
-        >
+        <el-button type="primary" size="mini" @click="delAll">批量删除</el-button>
         <el-input
           v-model="select_word"
           size="mini"
@@ -79,13 +77,8 @@
       </el-table-column>
       <el-table-column label="操作" width="150" align="center">
         <template slot-scope="scope">
-          <el-button size="mini" @click="handleEdit(scope.row)">编辑</el-button>
-          <el-button
-            size="mini"
-            type="danger"
-            @click="handleDelete(scope.row.id)"
-            >删除</el-button
-          >
+          <el-button type="primary" icon="el-icon-edit" circle @click="handleEdit(scope.row)"></el-button>
+          <el-button type="danger" icon="el-icon-delete" circle @click="handleDelete(scope.row.id)"></el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -276,11 +269,11 @@ export default {
     },
   },
   created() {
-    this.getSingers();
+    this.getData();
   },
   methods: {
     //查询所有歌手
-    getSingers() {
+    getData() {
       this.tableData = [];
       this.tempData = [];
       getAllSinger()
@@ -312,7 +305,7 @@ export default {
         .then((res) => {
           console.log(res);
           if (res.code == 1) {
-            this.getSingers();
+            this.getData();
             this.notify("添加成功", "success");
           } else {
             this.notify("添加失败", "error");
@@ -354,7 +347,7 @@ export default {
           console.log(res);
           if (res.code == 1) {
             this.notify("修改成功", "success");
-            this.getSingers();
+            this.getData();
           } else {
             this.notify("修改失败", "error");
           }
@@ -370,7 +363,7 @@ export default {
       delSinger(this.idx).then((res) => {
         if (res.code == 1) {
           this.notify("删除成功", "success");
-          this.getSingers();
+          this.getData();
           this.deleteVisible = false;
         } else {
           this.notify("删除失败", "error");
@@ -411,4 +404,5 @@ export default {
   display: flex;
   justify-content: center;
 }
+
 </style>
